@@ -13,6 +13,17 @@ html {
   text-rendering: optimizeLegibility;
 }
 
+.clearfix {
+  zoom: 1;
+}
+.clearfix:after {
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
 .row {
   max-width: 1140px;
   margin: 0 auto;
@@ -170,4 +181,139 @@ h2:after {
 .main-nav li a:hover,
 .main-nav li a:active {
   border-bottom: 2px solid #e67e22;
+}
+
+/* ----------FEATURES------------- */
+
+.section-features .long-copy {
+  margin-bottom: 30px;
+}
+
+/* -----------MEALS---------------- */
+
+.section-meals {
+  padding: 0;
+}
+
+.meals-showcase {
+  list-style: none;
+  width: 100%;
+}
+
+.meals-showcase li {
+  display: block;
+  float: left;
+  width: 25%;
+}
+
+.meal-photo {
+  width: 100%;
+  margin: 0;
+  background: #000;
+  overflow: hidden;
+}
+
+.meal-photo img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.2s opacity 0.5s;
+  opacity: 0.7;
+  transform: scale(1.15);
+}
+.meal-photo img:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* --------HOW IT WORKS-------------- */
+
+.section-steps {
+  background-color: #f4f4f4;
+}
+
+.steps-box:first-child {
+  text-align: right;
+  padding-right: 3%;
+  margin-top: 30px;
+}
+
+.steps-box:last-child {
+  padding-left: 3%;
+  margin-top: 70px;
+}
+
+.app-screen {
+  width: 40%;
+}
+
+.works-step {
+  margin-bottom: 30px;
+}
+
+.works-step:last-of-type {
+  margin-bottom: 80px;
+}
+
+.works-step div {
+  color: #e67e22;
+  border: 2px solid #e67e22;
+  /* display: inline-block; */
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  padding: 5px;
+  float: left;
+  font-size: 150%;
+  margin-right: 25px;
+}
+
+.btn-app img {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.btn-app:link,
+.btn-app:visited {
+  border: 0;
+}
+/* ---------CITIES------------ */
+
+.box img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 50px;
+}
+
+.city-feature {
+  margin-bottom: 5px;
+}
+
+.icon-small {
+  color: #e67e22;
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  font-size: 120%;
+
+  line-height: 120%;
+  vertical-align: middle;
+  margin-top: -4px;
+  margin-right: 10px;
+}
+
+a:link,
+a:visited {
+  color: #e67e22;
+  text-decoration: none;
+  border-bottom: 1px solid #e67e22;
+  padding-bottom: 1px;
+  transition: border-bottom 0.2s color 0.2s;
+}
+
+a:hover,
+a:active {
+  color: #555;
+  border-bottom: 1px solid transparent;
 }
