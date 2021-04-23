@@ -29,7 +29,7 @@ $(document).ready(function () {
   });
 
   $(function () {
-    $("a[href*=#]:not([href=#])").click(function () {
+    $("a[href*=\\#]:not([href=\\#])").click(function () {
       if (
         location.pathname.replace(/^\//, "") ===
           this.pathname.replace(/^\//, "") &&
@@ -87,4 +87,17 @@ $(document).ready(function () {
       offset: "50%",
     }
   );
+
+  $(".js--nav-icon").click(function () {
+    let nav = $(".js--main-nav");
+    let icon = $(".js--nav-icon ion-icon");
+    if (icon.attr("name") !== "menu") {
+      icon.attr("name", "menu");
+    } else {
+      nav.css("display", "none");
+      icon.attr("name", "close");
+    }
+
+    nav.slideToggle(200);
+  });
 });
