@@ -7,7 +7,7 @@
   padding-left: 9rem;
   font-size: $default-font-size;
   transform: skewX(-12deg);
-
+  display: table;
   &__shape {
     width: 15rem;
     height: 15rem;
@@ -16,8 +16,6 @@
     shape-outside: circle(50% at 50% 50%);
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
-    overflow: hidden;
-    position: relative;
     transform: translateX(-3rem) skewX(12deg);
   }
 
