@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "landing page",
   "browserslist": [
-    "> 1%",
-    "IE 10"
+    "last 10 versions"
   ],
   "main": "index.js",
   "scripts": {
