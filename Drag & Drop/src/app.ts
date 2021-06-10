@@ -1,7 +1,28 @@
+function Autobind(
+  _target: any,
+  _methodName: string,
+  descriptor: PropertyDescriptor
+) {
+  const originalMethod = descriptor.value;
+  const adjDescriptor: PropertyDescriptor = {
+    configurable: true,
+    get() {
+      const boundFn = originalMethod.bind(this);
+      return boundFn;
+    },
+  };
+
+  return adjDescriptor;
+}
+
 class ProjectInput {
   templateElement: HTMLTemplateElement;
   hostElement: HTMLDivElement;
   element: HTMLFontElement;
+  titleInputELement: HTMLInputElement;
+  descriptionInputELement: HTMLInputElement;
+  peopleInputELement: HTMLInputElement;
+
   constructor() {
     this.templateElement = document.getElementById(
       "project-input"
@@ -14,7 +35,31 @@ class ProjectInput {
     );
 
     this.element = importedNode.firstElementChild as HTMLFontElement;
+    this.element.id = "user-input";
+
+    this.titleInputELement = this.element.querySelector(
+      "#title"
+    ) as HTMLInputElement;
+
+    this.descriptionInputELement = this.element.querySelector(
+      "#description"
+    ) as HTMLInputElement;
+    this.peopleInputELement = this.element.querySelector(
+      "#people"
+    ) as HTMLInputElement;
+
     this.attach();
+    this.configure();
+  }
+
+  @Autobind
+  private submitHandler(event: Event) {
+    event.preventDefault();
+    console.log(this.titleInputELement.value);
+  }
+
+  private configure() {
+    this.element.addEventListener("submit", this.submitHandler);
   }
 
   private attach() {
