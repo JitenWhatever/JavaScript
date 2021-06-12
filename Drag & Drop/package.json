@@ -5,7 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "live-server"
+    "start": "node ./node_modules/live-server/live-server.js",
+    "build": "node ./node_modules/webpack/bin/webpack.js --config webpack.config.prod.js"
   },
   "keywords": [
     "typescript"
@@ -13,11 +14,11 @@
   "author": "Jiten",
   "license": "ISC",
   "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
     "live-server": "^1.2.1",
     "ts-loader": "^9.2.3",
     "typescript": "^4.3.2",
     "webpack": "^5.38.1",
-    "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-cli": "^4.7.2"
   }
 }
