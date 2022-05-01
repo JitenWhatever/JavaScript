@@ -10,7 +10,7 @@ app.set("view engine", "ejs");
 app.set("views", "views");
 
 
-app.get("/netbank", function(req, res) {
+app.get("/", function(req, res) {
     res.status(200).render('index')
 });
 
