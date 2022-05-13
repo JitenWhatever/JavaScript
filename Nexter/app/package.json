@@ -1,0 +1,31 @@
+{
+  "name": "nexter",
+  "version": "1.0.0",
+  "description": "landing page",
+  "browserslist": [
+    "last 10 versions"
+  ],
+  "main": "app.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "devserver": "live-server --browser=firefox",
+    "start:app": "node app.js",
+    "compile:sass": "node-sass public/sass/main.scss -o public/css/style.comp.css",
+    "prefix:css": "postcss public/css/style.comp.css  --use autoprefixer -o public/css/style.prefix.css",
+    "compress:css": "node-sass public/css/style.prefix.css public/css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css",
+    "start": "npm-run-all build:css start:app"
+  },
+  "author": "Jiten",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "concat": "^1.0.3",
+    "node-sass": "^5.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.15",
+    "postcss-cli": "^8.3.1",
+    "ejs": "^3.1.7",
+    "express": "^4.18.1"
+  }
+}
